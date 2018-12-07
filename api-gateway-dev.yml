@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/JonasZeng/config-repo.git
+          username: jonas_zeng@outlook.com
+          password: 20184512@git
+        native:
+          search-locations: classpath:/config/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+management:
+  endpoints:
+    web:
+      expose: "*"
